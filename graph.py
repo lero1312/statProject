@@ -1,7 +1,6 @@
-from tkinter import *
+import matplotlib
 import matplotlib.pyplot as plt
-
-
+matplotlib.style.use('ggplot')
 def showHist(x, y):
     '''
     :param x: list of integers OX
@@ -37,7 +36,7 @@ def showScatterPlot(x, y):
     y = list(map(float, y))
     x.sort()
     y.sort()
-    plt.boxplot(x, y)
+    plt.scatter(x, y)
     plt.show()
 
 
