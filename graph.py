@@ -47,7 +47,7 @@ def showBarPlot(x):
     '''
     x = list(map(float, x))
     x.sort()
-    plt.bar(x)
+    plt.bar(x,height = 1)
     plt.show()
 
 
