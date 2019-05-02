@@ -36,33 +36,33 @@ def add():
     V= StringVar()
     Median = Label(top, textvariable=V)
     Median.pack(side=TOP)
-    V.set("median: "+str(calcMedian(Data)))
+    V.set("median: " + str(cMed(Data)))
 
     V2 = StringVar()
     Mode= Label(top,  textvariable=V2)
     Mode.pack(side=TOP)
-    V2.set("Mode: "+str(calcMode(Data)))
+    V2.set("Mode: " + str(cMode(Data)))
 
     q1 = StringVar()
     Q1 = Label(top, textvariable=q1)
     Q1.pack(side=TOP)
-    q1.set("Q1 : " + str(calcQ1(x, Data)))
+    q1.set("Q1 : " + str(Q1(x, Data)))
 
     q3 = StringVar()
     Q3 = Label(top, textvariable=q3)
     Q3.pack(side=TOP)
-    q3.set("Q3 : " + str(calcQ3(x,z, Data)))
+    q3.set("Q3 : " + str(Q3(x, z, Data)))
 
 
     q2 = StringVar()
     Q2 = Label(top, textvariable=q2)
     Q2.pack(side=TOP)
-    q2.set("Q2 : " + str(calcQ2(x,Data)))
+    q2.set("Q2 : " + str(Q2(x, Data)))
 
     iq = StringVar()
     IQ = Label(top, textvariable=iq)
     IQ.pack(side=TOP)
-    iq.set("IQR : " + str(calcIQR(x, Data)))
+    iq.set("IQR : " + str(cIQR(x, Data)))
 
     showBoxPlot(Data)
 
