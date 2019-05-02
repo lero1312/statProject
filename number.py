@@ -4,21 +4,21 @@ import math
 matplotlib.style.use('ggplot')
 
 
-def calNumOfIntervals(values):
-    k = int(math.log(len(values),2)+2)
-    return k
+def cNoIntervals(values):
+    z = int(math.log(len(values), 2) + 2)
+    return z
 
 
 
-def calcLengthOfInterval(values,k):
-    lenOfInterval = int((values[len(values)-1]-values[0])/k)
-    if (values[len(values)-1]-values[0])%k != 0 :
-        lenOfInterval+=1
-    return lenOfInterval
+def cLenInterval(val, z):
+    lengthOfInterval = int((val[len(val) - 1] - val[0]) / z)
+    if (val[len(val) - 1] - val[0])%z != 0 :
+        lengthOfInterval+=1
+    return lengthOfInterval
 
 
 
-def calcMean(values):
+def cMean(values):
     mean = 0
     for i in values:
         mean += i
