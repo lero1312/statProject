@@ -1,5 +1,4 @@
 from tkinter import *
- #import numpy as np; np.random.seed(13)
 import matplotlib.pyplot as plt
 import math
 from graph import *
