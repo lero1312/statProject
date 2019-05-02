@@ -1,4 +1,4 @@
- #import numpy as np; np.random.seed(13)
+
 import matplotlib.pyplot as plt
 import math
 matplotlib.style.use('ggplot')
@@ -10,7 +10,7 @@ def cMed(val):
         return (val[int(len(val) / 2)] + val[int(len(val) / 2) - 1]) / 2
 
 def cLargstOutlier(m, val):
-    q3 = Q3(m, int(m / 2), val)
+    q3 = cQ3(m, int(m / 2), val)
     iqr = cIQR(m, val)
     return q3 + 1.5*iqr
 
@@ -37,7 +37,7 @@ numOfData = len(val)
 val.sort()
 
 def cIQR(m, val):
-    return Q3(m, int(m / 2), val) - Q1(int(m / 2) - 1, val)
+    return cQ3(m, int(m / 2), val) - cQ1(int(m / 2) - 1, val)
 
 
 def cNoIntervals(values):
@@ -71,7 +71,7 @@ def cMode(val):
 
 
 
-def Q2(m, val):
+def cQ2(m, val):
     if (m%2 != 0):
         return val[int(m / 2)]
     else:
@@ -79,14 +79,14 @@ def Q2(m, val):
 
 
 
-def Q1(m, val):
+def cQ1(m, val):
     if (m%2 == 0):
         return val[int(m / 2)]
     else:
         return (val[int(m / 2)] + val[int(m / 2) + 1]) / 2
 
 
-def Q3(m, m2, val):
+def cQ3(m, m2, val):
     if (m%2 != 0):
         m2 += 1
 
@@ -99,6 +99,6 @@ def Q3(m, m2, val):
 
 
 def cSmlstOutlier(m, val):
-    q1 = Q1(int(m / 2) - 1, val)
+    q1 = cQ1(int(m / 2) - 1, val)
     iqr = cIQR(m, val)
     return q1 - 1.5*iqr
